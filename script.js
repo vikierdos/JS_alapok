@@ -71,12 +71,11 @@ function esemenyKezeles2(){
 
 function esemenyKezeles4(){
     const  taroloELEMEK = document.querySelectorAll(".tarolo .elem");
-    const eredmenyELEM = document.querySelector(".megjelenito")
-    console.log(taroloELEMEK);
+    const eredmenyELEM = document.querySelector(".megjelenito");
     for (let index = 0; index < taroloELEMEK.length; index++) {
-        taroloELEMEK[index].addEventListener("click", esemenyKezelo)
+        taroloELEMEK[index].addEventListener("click", esemenyKezelo);
         function esemenyKezelo(){
-            eredmenyELEM.innerHTML += taroloELEMEK[index].innerHTML
+            eredmenyELEM.innerHTML += taroloELEMEK[index].innerHTML;
         }
         
     }
