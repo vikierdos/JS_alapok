@@ -6,6 +6,7 @@ window.addEventListener("load", function () {
     elemekFormazasa1();
     esemenyKezeles1();
     esemenyKezeles2();
+    esemenyKezeles4();
 });
 
 function elemekElerese1() {
@@ -51,10 +52,32 @@ function esemenyKezeles2(){
     const gombELEM = document.querySelector(".feladat button");
     gombELEM.addEventListener("click", esemenyKezelo);
     function esemenyKezelo(){
-        feladatELEM.innerHTML += `<div><img src="kep.jpg" alt="virág" id="kep"></img></div>`;
+        feladatELEM.innerHTML += `<div><img src="kep.jpg" alt="virág" id="kep" class="kisebb"></div>`;
+        esemenyKezeles3();
+    }
+    
+    function esemenyKezeles3(){
+        const KEP = document.querySelector("#kep");
+        KEP.addEventListener("mouseout", esemenyKezelo);
+        KEP.addEventListener("mouseenter", esemenyKezelo2);
+        function esemenyKezelo(){
+            KEP.classList.add("kisebb");
+        }
+        function esemenyKezelo2(){
+            KEP.classList.remove("kisebb");
+        }
     }
 }
 
-function esemenyKezeles3(){
-    const kep = document.ge
+function esemenyKezeles4(){
+    const  taroloELEMEK = document.querySelectorAll(".tarolo .elem");
+    const eredmenyELEM = document.querySelector(".megjelenito")
+    console.log(taroloELEMEK);
+    for (let index = 0; index < taroloELEMEK.length; index++) {
+        taroloELEMEK[index].addEventListener("click", esemenyKezelo)
+        function esemenyKezelo(){
+            eredmenyELEM.innerHTML += taroloELEMEK[index].innerHTML
+        }
+        
+    }
 }
